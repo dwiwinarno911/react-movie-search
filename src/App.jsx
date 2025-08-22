@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import { useDebounced } from "./hooks/useDebounced"
 import { useFavorites, FavoritesProvider } from "./context/FavoritesContext"
 import Header from "./component/Header"
@@ -77,8 +77,8 @@ export default function App() {
     <FavoritesProvider>
       <BrowserRouter>
         <nav className="navbar">
-          <a href="/" className="nav-link">Home</a>
-          <a href="/favorites" className="nav-link">Favorites</a>
+          <NavLink to="/" end className="nav-link">Home</NavLink>
+          <NavLink to="/favorites" className="nav-link">Favorites</NavLink>
         </nav>
         <Routes>
           <Route path="/" element={<MovieApp />} />
